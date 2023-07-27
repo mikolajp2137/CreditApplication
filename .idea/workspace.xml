@@ -4,29 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65e6afc-18cf-4b6d-972c-3621ecc57477" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/ConsoleReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/PersonScoringCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/ContactData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/CreditApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Education.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/MaritalStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PersonalData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PurposeOfLoan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PurposeOfLoanType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/PersonScoringCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" afterDir="false" />
+    <list default="true" id="b65e6afc-18cf-4b6d-972c-3621ecc57477" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationDecision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditRatingCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/DecisionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/EducationCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/MaritalStatusCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/ScoringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CreditApplicationServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/CreditApplicationTestFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/EducationCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/MaritalStatusCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/PersonScoringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/PersonScoringCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/PersonScoringCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/PersonScoringCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -66,8 +64,8 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
@@ -77,10 +75,11 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.mikolajp.creditapp.core.scoring" />
       <recent name="pl.mikolajp.creditapp.core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonScoringCalculatorTest.test3">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.Main" />
       <module name="creditapp" />
@@ -90,6 +89,53 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EducationCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="creditapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.mikolajp.creditapp.core.scoring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core.scoring" />
+      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.scoring.EducationCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EducationCalculatorTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="creditapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.mikolajp.creditapp.core.scoring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core.scoring" />
+      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.scoring.EducationCalculatorTest" />
+      <option name="METHOD_NAME" value="test1(pl.mikolajp.creditapp.core.model.Education)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IncomeCalculatorTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="creditapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.mikolajp.creditapp.core.scoring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core.scoring" />
+      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.scoring.IncomeCalculatorTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,44 +156,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonScoringCalculatorTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="creditapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.mikolajp.creditapp.core.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core" />
-      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.PersonScoringCalculatorTest" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonScoringCalculatorTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="creditapp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pl.mikolajp.creditapp.core.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core" />
-      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.PersonScoringCalculatorTest" />
-      <option name="METHOD_NAME" value="test3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonScoringCalculatorTest.test3" />
-        <item itemvalue="JUnit.PersonScoringCalculatorTest.test2" />
-        <item itemvalue="JUnit.PersonScoringCalculatorTest.test1" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.IncomeCalculatorTest.test1" />
+        <item itemvalue="JUnit.EducationCalculatorTest" />
+        <item itemvalue="JUnit.EducationCalculatorTest.test1" />
+        <item itemvalue="JUnit.PersonScoringCalculatorTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -159,11 +174,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1690251028363</updated>
-      <workItem from="1690251029712" duration="1556000" />
+      <workItem from="1690251029712" duration="17050000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <option name="closed" value="true" />
+      <created>1690252855488</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690252855488</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CreditApplication$EducationCalculatorTest.ic" NAME="EducationCalculatorTest Coverage Results" MODIFIED="1690494244810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pl.mikolajp.creditapp.core.scoring.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CreditApplication$CreditApplicationServiceTest.ic" NAME="CreditApplicationServiceTest Coverage Results" MODIFIED="1690488452952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>pl.mikolajp.creditapp.core.*</FILTER>
+    </SUITE>
   </component>
 </project>

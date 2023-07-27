@@ -1,40 +1,45 @@
 package pl.mikolajp.creditapp.core;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.Person;
+import pl.mikolajp.creditapp.core.scoring.EducationCalculator;
 
-import java.math.BigDecimal;
+import java.util.UUID;
 
 public class CreditApplicationService {
+    private static final Logger log = LoggerFactory.getLogger(CreditApplicationService.class);
+    private final PersonScoringCalculator personScoringCalculator;
+    private final CreditRatingCalculator creditRatingCalculator;
 
-    public String getDecision(CreditApplication creditApplication) {
+    public CreditApplicationService(PersonScoringCalculator calculator, CreditRatingCalculator creditRatingCalculator) {
+        this.personScoringCalculator = calculator;
+        this.creditRatingCalculator = creditRatingCalculator;
+    }
+
+    public CreditApplicationDecision getDecision(CreditApplication creditApplication) {
+        String id = UUID.randomUUID().toString();
+        log.info("Application ID is " + id);
+        MDC.put("id", id);
         Person person = creditApplication.getPerson();
-        PersonScoringCalculator calculator = new PersonScoringCalculator();
-        String decision;
-        int scoring = calculator.calculate(person);
+        int scoring = personScoringCalculator.calculate(person);
+        CreditApplicationDecision decision;
         if (scoring < 300) {
-            decision = "Sorry " + person.getPersonalData().getName() + " " + person.getPersonalData().getLastName() + ", decision is negative";
+            decision = new CreditApplicationDecision(DecisionType.NEGATIVE_SCORING, person.getPersonalData(), null);
         } else if (scoring <= 400) {
-            decision = "Sorry " + person.getPersonalData().getName() + " " + person.getPersonalData().getLastName() + ",  bank requires additional documents. Our Consultant will contact you.";
+            decision = new CreditApplicationDecision(DecisionType.CONTACT_REQUIRED, person.getPersonalData(), null);
         } else {
-            double creditRate = person.getIncomePerFamilyMember() * 12 * creditApplication.getPurposeOfLoan().getPeriod();
-            switch (creditApplication.getPurposeOfLoan().getPurposeOfLoanType()) {
-                case PERSONAL_LOAN:
-                    creditRate *= Constants.PERSONAL_LOAN_LOAN_RATE;
-                    break;
-                case MORTGAGE:
-                    creditRate *= Constants.MORTGAGE_LOAN_RATE;
-                    break;
-            }
+            double creditRate = creditRatingCalculator.calculateCreditRating(creditApplication);
             if (creditRate >= creditApplication.getPurposeOfLoan().getAmount()) {
-                decision = "Congratulations " + person.getPersonalData().getName() + " " + person.getPersonalData().getLastName() + ", decision is positive";
+                decision = new CreditApplicationDecision(DecisionType.POSITIVE, person.getPersonalData(), null);
             } else {
-                BigDecimal roundedCreditRate = new BigDecimal(creditRate).setScale(2);
-                decision = "Sorry, " + person.getPersonalData().getName() + " " + person.getPersonalData().getLastName() + ", decision is negative. Bank can borrow only " + roundedCreditRate;
-
+                decision = new CreditApplicationDecision(DecisionType.NEGATIVE_RATING, person.getPersonalData(), null);
             }
 
         }
+        log.info("Decission = "+decision.getDecisionType());
         return decision;
     }
 }
