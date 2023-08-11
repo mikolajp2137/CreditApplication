@@ -5,26 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b65e6afc-18cf-4b6d-972c-3621ecc57477" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationDecision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditRatingCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/DecisionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/EducationCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/MaritalStatusCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/ScoringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CreditApplicationServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/CreditApplicationTestFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/EducationCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/MaritalStatusCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/FinanceData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/IncomeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/SourceOfIncome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/PersonScoringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/PersonScoringCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/PersonScoringCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/PersonScoringCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/ConsoleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/ConsoleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PersonalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PersonalData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -51,25 +41,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -79,7 +70,7 @@
       <recent name="pl.mikolajp.creditapp.core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.IncomeCalculatorTest.test2">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.Main" />
       <module name="creditapp" />
@@ -140,17 +131,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonScoringCalculatorTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IncomeCalculatorTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="creditapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.mikolajp.creditapp.core.*" />
+          <option name="PATTERN" value="pl.mikolajp.creditapp.core.scoring.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core" />
-      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.PersonScoringCalculatorTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core.scoring" />
+      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.scoring.IncomeCalculatorTest" />
+      <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.IncomeCalculatorTest.test2" />
         <item itemvalue="JUnit.IncomeCalculatorTest.test1" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.EducationCalculatorTest" />
         <item itemvalue="JUnit.EducationCalculatorTest.test1" />
-        <item itemvalue="JUnit.PersonScoringCalculatorTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -175,6 +166,9 @@
       <option name="presentableId" value="Default" />
       <updated>1690251028363</updated>
       <workItem from="1690251029712" duration="17050000" />
+      <workItem from="1691077120802" duration="1000" />
+      <workItem from="1691533375620" duration="641000" />
+      <workItem from="1691772095695" duration="2478000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
