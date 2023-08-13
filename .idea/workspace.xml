@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65e6afc-18cf-4b6d-972c-3621ecc57477" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/FinanceData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/IncomeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/SourceOfIncome.java" afterDir="false" />
+    <list default="true" id="b65e6afc-18cf-4b6d-972c-3621ecc57477" name="Changes" comment="multiple income sources and loops">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/EnumValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/ConsoleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/ConsoleReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PersonalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PersonalData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,7 +63,7 @@
       <recent name="pl.mikolajp.creditapp.core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IncomeCalculatorTest.test2">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.Main" />
       <module name="creditapp" />
@@ -149,9 +142,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.IncomeCalculatorTest.test2" />
         <item itemvalue="JUnit.IncomeCalculatorTest.test1" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.EducationCalculatorTest" />
         <item itemvalue="JUnit.EducationCalculatorTest.test1" />
       </list>
@@ -168,7 +161,7 @@
       <workItem from="1690251029712" duration="17050000" />
       <workItem from="1691077120802" duration="1000" />
       <workItem from="1691533375620" duration="641000" />
-      <workItem from="1691772095695" duration="2478000" />
+      <workItem from="1691772095695" duration="7371000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -178,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690252855488</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="multiple income sources and loops">
+      <option name="closed" value="true" />
+      <created>1691779478914</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691779478914</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +187,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="multiple income sources and loops" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiple income sources and loops" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CreditApplication$EducationCalculatorTest.ic" NAME="EducationCalculatorTest Coverage Results" MODIFIED="1690494244810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
