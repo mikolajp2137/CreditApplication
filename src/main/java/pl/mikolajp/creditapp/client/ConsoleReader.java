@@ -23,20 +23,29 @@ public class ConsoleReader {
         double purposeOfLoanAmount = getPurposeOfLoanAmount(in);
         int period = getPeriod(in);
 
-        PersonalData personalData = new PersonalData(name, lastName, mothersMaidenName, maritalStatus, education, numOfDependant);
         ContactData contactData = new ContactData(email, phoneNumber);
         PurposeOfLoan purposeOfLoan = new PurposeOfLoan(purposeOfLoanType, purposeOfLoanAmount, period);
         FinanceData financeData = new FinanceData(sourcesOfIncome);
 
-        return new CreditApplication(new Person(personalData, contactData, financeData), purposeOfLoan);
+        return new CreditApplication(Person.Builder.create()
+                .withPersonalData(PersonalData
+                        .Builder
+                        .create()
+                        .withName(name).withLastName(lastName).withMothersMaidenName(mothersMaidenName)
+                        .withMaritalStatus(maritalStatus).withEducation(education)
+                        .withNumOfDependants(numOfDependant)
+                        .build())
+                .withContactData(contactData)
+                .withFinanceData(financeData)
+                .build(), purposeOfLoan);
     }
 
     private int getPeriod(Scanner in) {
         String input;
-        do{
+        do {
             System.out.println("Enter loan period (in years)");
             input = in.next();
-        }while (!NumberValidator.validateInteger(input, 5, 10, 15, 20, 25, 40));
+        } while (!NumberValidator.validateInteger(input, 5, 10, 15, 20, 25, 40));
         int period = Integer.valueOf(input);
         return period;
     }
@@ -61,6 +70,7 @@ public class ConsoleReader {
         } while (!NumberValidator.validateDoube(input, 0.0, Double.MAX_VALUE));
         return Double.valueOf(input);
     }
+
     private double getPurposeOfLoanAmount(Scanner in) {
         String input;
         do {
@@ -78,6 +88,7 @@ public class ConsoleReader {
         } while (!NumberValidator.validateInteger(input, 0, Integer.MAX_VALUE));
         return Integer.valueOf(input);
     }
+
     private int getNumOfDependants(Scanner in) {
         String input;
         do {

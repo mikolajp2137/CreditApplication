@@ -68,10 +68,10 @@ class CreditApplicationServiceTest {
     @DisplayName("Should return positive, when scoring is > 400 and credit rating <= expected loan amount")
     public void test4() {
         //given
-        CreditApplication creditApplication = CreditApplicationTestFactory.create(50000);
+        CreditApplication creditApplication = CreditApplicationTestFactory.create(150000);
         BDDMockito.given(calculatorMock.calculate(eq(creditApplication.getPerson()))).willReturn(450);
 
-        BDDMockito.given(creditRatingCalculatorMock.calculateCreditRating(eq(creditApplication))).willReturn(51000.00);
+        BDDMockito.given(creditRatingCalculatorMock.calculateCreditRating(eq(creditApplication))).willReturn(151000.00);
         //when
         CreditApplicationDecision decision = cut.getDecision(creditApplication);
         //then

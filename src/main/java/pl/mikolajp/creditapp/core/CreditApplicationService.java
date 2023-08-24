@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.Person;
-import pl.mikolajp.creditapp.core.scoring.EducationCalculator;
 
 import java.util.UUID;
 
@@ -27,15 +26,19 @@ public class CreditApplicationService {
         int scoring = personScoringCalculator.calculate(person);
         CreditApplicationDecision decision;
         if (scoring < 300) {
-            decision = new CreditApplicationDecision(DecisionType.NEGATIVE_SCORING, person.getPersonalData(), null);
+            decision = new CreditApplicationDecision(DecisionType.NEGATIVE_SCORING, person.getPersonalData(), null, scoring);
         } else if (scoring <= 400) {
-            decision = new CreditApplicationDecision(DecisionType.CONTACT_REQUIRED, person.getPersonalData(), null);
+            decision = new CreditApplicationDecision(DecisionType.CONTACT_REQUIRED, person.getPersonalData(), null, scoring);
         } else {
             double creditRate = creditRatingCalculator.calculateCreditRating(creditApplication);
             if (creditRate >= creditApplication.getPurposeOfLoan().getAmount()) {
-                decision = new CreditApplicationDecision(DecisionType.POSITIVE, person.getPersonalData(), null);
+                if(creditApplication.getPurposeOfLoan().getAmount() < Constants.MINIMAL_LOAN_AMOUNT_MORTGAGE){
+                    decision = new CreditApplicationDecision(DecisionType.NEGATIVE_REQUIREMENTS_NOT_MET, person.getPersonalData(), creditRate, scoring);
+                }else {
+                    decision = new CreditApplicationDecision(DecisionType.POSITIVE, person.getPersonalData(), creditRate, scoring);
+                }
             } else {
-                decision = new CreditApplicationDecision(DecisionType.NEGATIVE_RATING, person.getPersonalData(), null);
+                decision = new CreditApplicationDecision(DecisionType.NEGATIVE_RATING, person.getPersonalData(), creditRate, scoring);
             }
 
         }

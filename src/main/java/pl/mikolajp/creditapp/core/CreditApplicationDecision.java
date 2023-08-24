@@ -1,7 +1,5 @@
 package pl.mikolajp.creditapp.core;
 
-import pl.mikolajp.creditapp.core.model.CreditApplication;
-import pl.mikolajp.creditapp.core.model.Person;
 import pl.mikolajp.creditapp.core.model.PersonalData;
 
 import java.math.BigDecimal;
@@ -14,11 +12,13 @@ public class CreditApplicationDecision {
     private final DecisionType decisionType;
     private final PersonalData personalData;
     private final Double creditRate;
+    private final int scoring;
 
-    public CreditApplicationDecision(DecisionType decisionType, PersonalData personalData, Double creditRate) {
+    public CreditApplicationDecision(DecisionType decisionType, PersonalData personalData, Double creditRate, int scoring) {
         this.decisionType = decisionType;
         this.personalData = personalData;
         this.creditRate = creditRate;
+        this.scoring = scoring;
     }
 
     public String getDecisionString() {
@@ -38,5 +38,13 @@ public class CreditApplicationDecision {
             }
         }
         return null;
+    }
+
+    public int getScoring() {
+        return scoring;
+    }
+
+    public Double getCreditRate() {
+        return creditRate;
     }
 }
