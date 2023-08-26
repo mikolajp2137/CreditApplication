@@ -5,9 +5,13 @@ import pl.mikolajp.creditapp.core.model.*;
 
 import java.util.Scanner;
 
-public class ConsoleReader {
+// THIS CLASS IS NO LONGER USED
+// TO BE DELETED LATER
 
-    public CreditApplication readInputParameters() {
+public class ConsoleReader implements CreditApplicationReader {
+
+    @Override
+    public CreditApplication read() {
         Scanner in = new Scanner(System.in);
 
         String name = getName(in);
@@ -23,17 +27,18 @@ public class ConsoleReader {
         double purposeOfLoanAmount = getPurposeOfLoanAmount(in);
         int period = getPeriod(in);
 
-        ContactData contactData = new ContactData(email, phoneNumber);
+        ContactData contactData = ContactData.Builder.create()
+                .withEmail(email).withPhoneNumber(phoneNumber)
+                .build();
         PurposeOfLoan purposeOfLoan = new PurposeOfLoan(purposeOfLoanType, purposeOfLoanAmount, period);
         FinanceData financeData = new FinanceData(sourcesOfIncome);
 
-        return new CreditApplication(Person.Builder.create()
+        return new CreditApplication(NaturalPerson.Builder.create()
                 .withPersonalData(PersonalData
                         .Builder
                         .create()
                         .withName(name).withLastName(lastName).withMothersMaidenName(mothersMaidenName)
                         .withMaritalStatus(maritalStatus).withEducation(education)
-                        .withNumOfDependants(numOfDependant)
                         .build())
                 .withContactData(contactData)
                 .withFinanceData(financeData)

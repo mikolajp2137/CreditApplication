@@ -6,10 +6,11 @@ import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.Education;
 import pl.mikolajp.creditapp.core.model.Person;
 
-public class EducationCalculator {
+public class EducationCalculator implements PersonCalculator{
     private static final Logger log = LoggerFactory.getLogger(EducationCalculator.class);
 
-    public int calculateEducation(Person person) {
+    @Override
+    public int calculate(Person person) {
         Education education = person.getPersonalData().getEducation();
         int pointsForEducation = education.getScoringPoints();
 

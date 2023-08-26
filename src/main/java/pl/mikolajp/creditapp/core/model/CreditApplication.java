@@ -1,5 +1,7 @@
 package pl.mikolajp.creditapp.core.model;
 
+import java.util.Optional;
+
 public class CreditApplication {
     private final Person person;
     private final PurposeOfLoan purposeOfLoan;

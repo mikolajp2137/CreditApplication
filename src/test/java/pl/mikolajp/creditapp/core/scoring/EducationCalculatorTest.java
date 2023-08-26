@@ -20,7 +20,7 @@ class EducationCalculatorTest {
         //given
         Person person = PersonTestFactory.create(education);
         //when
-        int scoring = cut.calculateEducation(person);
+        int scoring = cut.calculate(person);
         //then
         assertEquals(education.getScoringPoints(), scoring);
     }

@@ -6,10 +6,11 @@ import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.MaritalStatus;
 import pl.mikolajp.creditapp.core.model.Person;
 
-public class MaritalStatusCalculator {
+public class MaritalStatusCalculator implements PersonCalculator{
     private static final Logger log = LoggerFactory.getLogger(EducationCalculator.class);
 
-    public int calculateMaritalStatus(Person person) {
+    @Override
+    public int calculate(Person person) {
         MaritalStatus maritalStatus = person.getPersonalData().getMaritalStatus();
         int pointsForMaritalStatus = maritalStatus.getScoringPoints();
 

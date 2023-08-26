@@ -5,14 +5,15 @@ import org.slf4j.LoggerFactory;
 import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.Person;
 
-public class IncomeCalculator {
+public class IncomeCalculator implements PersonCalculator{
     private static final Logger log = LoggerFactory.getLogger(IncomeCalculator.class);
 
-    public int calculateIncome(Person person) {
+    @Override
+    public int calculate(Person person) {
         double incomePerFamilyMember = person.getIncomePerFamilyMember();
         int pointsForIncome = (int) (incomePerFamilyMember / 1000) * 100;
         log.info("Income per family member = " + incomePerFamilyMember + ". (+" + ScoringUtils.getPointsString(pointsForIncome));
-        if(person.getFinanceData().getSourcesOfIncome().length > 1) {
+        if(person.getFinanceData().getSourcesOfIncome().size() > 1) {
             log.info("Extra 100 points for multiple sources of income = " + ScoringUtils.getPointsString(100));
             pointsForIncome += 100;
         }

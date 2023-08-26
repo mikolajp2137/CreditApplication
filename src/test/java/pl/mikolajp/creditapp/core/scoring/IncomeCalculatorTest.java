@@ -22,7 +22,7 @@ class IncomeCalculatorTest {
         SourceOfIncome s1 = new SourceOfIncome(IncomeType.SELF_EMPLOYMENT,5000.00);
         Person person = PersonTestFactory.create(2, s1);
         //when
-        int scoring = cut.calculateIncome(person);
+        int scoring = cut.calculate(person);
         //then
         assertEquals(200, scoring);
     }
@@ -35,7 +35,7 @@ class IncomeCalculatorTest {
         SourceOfIncome s2 = new SourceOfIncome(IncomeType.RETIREMENT,1000.00);
         Person person = PersonTestFactory.create(2, s1, s2);
         //when
-        int scoring = cut.calculateIncome(person);
+        int scoring = cut.calculate(person);
         //then
         assertEquals(300, scoring);
     }
