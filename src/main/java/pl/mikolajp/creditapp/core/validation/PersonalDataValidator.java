@@ -1,6 +1,5 @@
 package pl.mikolajp.creditapp.core.validation;
 
-import pl.mikolajp.creditapp.core.Constants;
 import pl.mikolajp.creditapp.core.exception.ValidationException;
 import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.PersonalData;

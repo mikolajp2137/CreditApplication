@@ -2,7 +2,6 @@ package pl.mikolajp.creditapp.core.scoring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.MaritalStatus;
 import pl.mikolajp.creditapp.core.model.Person;
 

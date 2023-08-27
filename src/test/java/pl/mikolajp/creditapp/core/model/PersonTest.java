@@ -2,7 +2,6 @@ package pl.mikolajp.creditapp.core.model;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,7 +23,7 @@ class PersonTest {
                 .build();
         //then
         assertNotNull(person.getFamilyMembers());
-        assertTrue(person.getFamilyMembers().size() == 3);
+        assertEquals(3, person.getFamilyMembers().size());
         assertEquals(jane, person.getFamilyMembers().get(0));
         assertEquals(john, person.getFamilyMembers().get(1));
         assertEquals(jack, person.getFamilyMembers().get(2));

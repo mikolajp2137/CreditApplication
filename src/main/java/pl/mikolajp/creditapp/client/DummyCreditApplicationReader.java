@@ -26,10 +26,7 @@ public class DummyCreditApplicationReader implements CreditApplicationReader {
                 .withYearsSinceFounded(3)
                 .build();
         PurposeOfLoan purposeOfLoan = new PurposeOfLoan(PurposeOfLoanType.MORTGAGE, 50000.00, 30);
-        CreditApplication creditApplication = new CreditApplication(person,purposeOfLoan);
 
-        System.out.println(person.getFamilyMembersSortedByName());
-        System.out.println(person.getFamilyMembers());
-        return creditApplication;
+        return new CreditApplication(person,purposeOfLoan);
     }
 }

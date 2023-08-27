@@ -8,8 +8,6 @@ import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.Person;
 import pl.mikolajp.creditapp.core.validation.CreditApplicationValidator;
 
-import java.util.UUID;
-
 import static pl.mikolajp.creditapp.core.Constants.MINIMAL_LOAN_AMOUNT_MORTGAGE;
 import static pl.mikolajp.creditapp.core.DecisionType.*;
 
@@ -26,8 +24,7 @@ public class CreditApplicationService {
     }
 
     public CreditApplicationDecision getDecision(CreditApplication creditApplication) {
-        String id = UUID.randomUUID().toString();
-        log.info("Application ID is " + id);
+        String id = creditApplication.getId().toString();
         MDC.put("id", id);
 
         try {

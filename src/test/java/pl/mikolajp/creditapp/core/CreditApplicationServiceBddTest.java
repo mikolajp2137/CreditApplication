@@ -15,7 +15,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.eq;
 
 class CreditApplicationServiceBddTest {
     private EducationCalculator educationCalculator = new EducationCalculator();

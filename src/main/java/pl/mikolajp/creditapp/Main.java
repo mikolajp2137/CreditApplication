@@ -3,7 +3,6 @@ package pl.mikolajp.creditapp;
 import pl.mikolajp.creditapp.client.CreditApplicationReader;
 import pl.mikolajp.creditapp.client.DummyCreditApplicationReader;
 import pl.mikolajp.creditapp.core.*;
-import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.scoring.EducationCalculator;
 import pl.mikolajp.creditapp.core.scoring.IncomeCalculator;
 import pl.mikolajp.creditapp.core.scoring.MaritalStatusCalculator;
@@ -21,13 +20,13 @@ public class Main {
         SelfEmployedScoringCalculator selfEmployedScoringCalculator = new SelfEmployedScoringCalculator();
         PersonScoringCalculatorFactory personScoringCalculatorFactory = new PersonScoringCalculatorFactory(selfEmployedScoringCalculator, educationCalculator, incomeCalculator, maritalStatusCalculator);
         CreditApplicationValidator creditApplicationValidator = new CreditApplicationValidator(new PersonValidator(new PersonalDataValidator()), new PurposeOfLoanValidator());
-        CreditApplicationService cut = new CreditApplicationService(personScoringCalculatorFactory, new CreditRatingCalculator(), creditApplicationValidator);
-
         CreditApplicationService service = new CreditApplicationService(personScoringCalculatorFactory, new CreditRatingCalculator(), creditApplicationValidator);
-        CreditApplication creditApplication = reader.read();
+        CreditApplicationManager creditApplicationManager = new CreditApplicationManager(service);
 
-        CreditApplicationDecision decision = service.getDecision(creditApplication);
+        creditApplicationManager.add(reader.read());
+        creditApplicationManager.add(reader.read());
+        creditApplicationManager.add(reader.read());
 
-        System.out.println(decision.getDecisionString());
+        creditApplicationManager.startProcessing();
     }
 }

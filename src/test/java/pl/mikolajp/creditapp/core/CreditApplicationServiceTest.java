@@ -1,6 +1,5 @@
 package pl.mikolajp.creditapp.core;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,6 @@ import pl.mikolajp.creditapp.core.exception.ValidationException;
 import pl.mikolajp.creditapp.core.model.CreditApplication;
 import pl.mikolajp.creditapp.core.model.CreditApplicationTestFactory;
 import pl.mikolajp.creditapp.core.model.Person;
-import pl.mikolajp.creditapp.core.model.PurposeOfLoanType;
 import pl.mikolajp.creditapp.core.scoring.PersonCalculator;
 import pl.mikolajp.creditapp.core.validation.CreditApplicationValidator;
 
