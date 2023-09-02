@@ -4,19 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b65e6afc-18cf-4b6d-972c-3621ecc57477" name="Changes" comment="complete validation of all inputs">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CreditApplicationServiceBddTest.java" afterDir="false" />
+    <list default="true" id="b65e6afc-18cf-4b6d-972c-3621ecc57477" name="Changes" comment="added simple FIFO queue of applications and cleaned up unused imports">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/anotation/ExactlyOneNotNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/anotation/NotNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/anotation/Regex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/anotation/ValidateCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/anotation/ValidateObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/exception/ExactlyOneNotNullException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/exception/RequirementsNotMetCause.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/exception/RequirementsNotMetException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Expense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/ExpenseType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Guarantor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/GuarantorsCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/CompoundPostValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/ExpensesPostValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/ObjectValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/PostValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/PurposeOfLoanPostValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/reflection/ClassAnnotationProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/reflection/ExactlyOneNotNullAnnotationProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/reflection/FieldAnnotationProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/reflection/NotNullAnnotationProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/reflection/RegexAnnotationProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/scoring/GuarantorsCalculatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/validation/CreditApplicationValidatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/ConsoleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/ConsoleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/DummyCreditApplicationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/client/DummyCreditApplicationReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationDecision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationDecision.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/CreditApplicationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/DecisionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/DecisionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/PersonScoringCalculatorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/PersonScoringCalculatorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/SelfEmployedScoringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/SelfEmployedScoringCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/ContactData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/ContactData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/CreditApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/CreditApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/FamilyMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/FamilyMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/FinanceData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/FinanceData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/NaturalPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/NaturalPerson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PersonalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PersonalData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PurposeOfLoan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/PurposeOfLoan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/SelfEmployed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/SelfEmployed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/SourceOfIncome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/model/SourceOfIncome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/CompoundScoringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/CompoundScoringCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/EducationCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/EducationCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/IncomeCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/MaritalStatusCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/MaritalStatusCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/PersonCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/scoring/ScoringCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/CreditApplicationValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/CreditApplicationValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/PersonValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/PersonalDataValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/mikolajp/creditapp/core/validation/PurposeOfLoanValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CompoundScoringCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CompoundScoringCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CreditApplicationServiceBddTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CreditApplicationServiceBddTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CreditApplicationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/CreditApplicationServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/CreditApplicationTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/CreditApplicationTestFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pl/mikolajp/creditapp/core/model/PersonTestFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +70,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
+        <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -68,14 +114,20 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="pl.mikolajp.creditapp.core.validation" />
       <recent name="pl.mikolajp.creditapp.core.scoring" />
+      <recent name="pl.mikolajp.creditapp.core.model" />
       <recent name="pl.mikolajp.creditapp.core" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.mikolajp.creditapp.core.anotation" />
+      <recent name="pl.mikolajp.creditapp.core.validation.reflection" />
+      <recent name="pl.mikolajp.creditapp.core.validation" />
+      <recent name="pl.mikolajp.creditapp.core.exception" />
       <recent name="pl.mikolajp.creditapp.core" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in creditapp">
+  <component name="RunManager" selected="JUnit.core in creditapp">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.Main" />
       <module name="creditapp" />
@@ -89,23 +141,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreditApplicationServiceBddTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreditApplicationValidatorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="creditapp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pl.mikolajp.creditapp.core.*" />
+          <option name="PATTERN" value="pl.mikolajp.creditapp.core.validation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core" />
-      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.CreditApplicationServiceBddTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core.validation" />
+      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.validation.CreditApplicationValidatorTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IncomeCalculatorTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GuarantorsCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="creditapp" />
       <extension name="coverage">
         <pattern>
@@ -114,7 +166,22 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core.scoring" />
-      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.scoring.IncomeCalculatorTest" />
+      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.scoring.GuarantorsCalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GuarantorsCalculatorTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="creditapp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.mikolajp.creditapp.core.scoring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.mikolajp.creditapp.core.scoring" />
+      <option name="MAIN_CLASS_NAME" value="pl.mikolajp.creditapp.core.scoring.GuarantorsCalculatorTest" />
       <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -129,21 +196,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in creditapp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="creditapp" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in creditapp" />
-        <item itemvalue="JUnit.CreditApplicationServiceBddTest.test1" />
         <item itemvalue="JUnit.core in creditapp" />
+        <item itemvalue="JUnit.CreditApplicationValidatorTest.test" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.IncomeCalculatorTest.test2" />
+        <item itemvalue="JUnit.GuarantorsCalculatorTest" />
+        <item itemvalue="JUnit.GuarantorsCalculatorTest.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +224,10 @@
       <workItem from="1692279828744" duration="7082000" />
       <workItem from="1692731766544" duration="1404000" />
       <workItem from="1692817104243" duration="599000" />
-      <workItem from="1692834616187" duration="3036000" />
+      <workItem from="1692834616187" duration="6734000" />
+      <workItem from="1693052856763" duration="31888000" />
+      <workItem from="1693310363244" duration="71000" />
+      <workItem from="1693510860513" duration="15320000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -199,7 +261,31 @@
       <option name="project" value="LOCAL" />
       <updated>1692405276205</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="remade some classes with builder design pattern and added a bdd test">
+      <option name="closed" value="true" />
+      <created>1692878944796</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692878944796</updated>
+    </task>
+    <task id="LOCAL-00006" summary="remade model to use interfaces, added Optional parameters, added exception handling for more validation, and other minor (and not) things">
+      <option name="closed" value="true" />
+      <created>1693088792082</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693088792082</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added simple FIFO queue of applications and cleaned up unused imports">
+      <option name="closed" value="true" />
+      <created>1693098255191</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693098255191</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,7 +296,10 @@
     <MESSAGE value="multiple income sources and loops" />
     <MESSAGE value="simple enum validation" />
     <MESSAGE value="complete validation of all inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete validation of all inputs" />
+    <MESSAGE value="remade some classes with builder design pattern and added a bdd test" />
+    <MESSAGE value="remade model to use interfaces, added Optional parameters, added exception handling for more validation, and other minor (and not) things" />
+    <MESSAGE value="added simple FIFO queue of applications and cleaned up unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="added simple FIFO queue of applications and cleaned up unused imports" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CreditApplication$EducationCalculatorTest.ic" NAME="EducationCalculatorTest Coverage Results" MODIFIED="1690494244810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

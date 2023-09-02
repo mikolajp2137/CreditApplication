@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import pl.mikolajp.creditapp.core.model.MaritalStatus;
 import pl.mikolajp.creditapp.core.model.Person;
 
-public class MaritalStatusCalculator implements PersonCalculator{
+public class MaritalStatusCalculator implements ScoringCalculator {
     private static final Logger log = LoggerFactory.getLogger(EducationCalculator.class);
 
     @Override

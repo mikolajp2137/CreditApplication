@@ -1,7 +1,11 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+
 public class FamilyMember implements Comparable<FamilyMember> {
+    @NotNull
     private final String name;
+    @NotNull
     private final Integer age;
 
     public FamilyMember(String name, Integer age) {

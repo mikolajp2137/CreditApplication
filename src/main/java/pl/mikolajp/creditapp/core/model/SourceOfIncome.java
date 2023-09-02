@@ -1,6 +1,9 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+
 public class SourceOfIncome {
+    @NotNull
     private final IncomeType incomeType;
     private final double netMonthlyIncome;
 

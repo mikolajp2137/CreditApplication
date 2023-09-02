@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import pl.mikolajp.creditapp.core.model.SelfEmployed;
 import pl.mikolajp.creditapp.core.scoring.*;
 
-public class SelfEmployedScoringCalculator implements PersonCalculator {
+public class SelfEmployedScoringCalculator implements ScoringCalculator {
     private static final Logger log = LoggerFactory.getLogger(SelfEmployedScoringCalculator.class);
 
 

@@ -1,12 +1,19 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+
 import java.util.Objects;
 
 public class Address {
+    @NotNull
     private final String street;
+    @NotNull
     private final String houseNumber;
+    @NotNull
     private final String zipCode;
+    @NotNull
     private final String city;
+    @NotNull
     private final String state;
 
     private Address(String street, String houseNumber, String zipCode, String city, String state) {

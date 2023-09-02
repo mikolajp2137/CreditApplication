@@ -4,6 +4,7 @@ import pl.mikolajp.creditapp.core.model.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class DummyCreditApplicationReader implements CreditApplicationReader {
 
@@ -26,7 +27,9 @@ public class DummyCreditApplicationReader implements CreditApplicationReader {
                 .withYearsSinceFounded(3)
                 .build();
         PurposeOfLoan purposeOfLoan = new PurposeOfLoan(PurposeOfLoanType.MORTGAGE, 50000.00, 30);
+        Set<Guarantor> guarantors = Set.of(Guarantor.Builder.create().withPesel("12345678901").withAge(18).build(),
+                Guarantor.Builder.create().withPesel("12345678902").withAge(41).build());
 
-        return new CreditApplication(person,purposeOfLoan);
+        return new CreditApplication(person, purposeOfLoan, guarantors);
     }
 }

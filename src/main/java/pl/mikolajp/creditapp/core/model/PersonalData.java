@@ -1,10 +1,23 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+import pl.mikolajp.creditapp.core.anotation.Regex;
+
+import static pl.mikolajp.creditapp.core.Constants.*;
+
 public class PersonalData {
+    @NotNull
+    @Regex(NAME_REGEX)
     private final String name;
+    @NotNull
+    @Regex(LAST_NAME_REGEX)
     private final String lastName;
+    @NotNull
+    @Regex(LAST_NAME_REGEX)
     private final String mothersMaidenName;
+    @NotNull
     private final MaritalStatus maritalStatus;
+    @NotNull
     private final Education education;
 
     private PersonalData(String name, String lastName, String mothersMaidenName, MaritalStatus maritalStatus, Education education) {

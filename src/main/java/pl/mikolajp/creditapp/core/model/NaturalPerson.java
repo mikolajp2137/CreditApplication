@@ -1,8 +1,16 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+import pl.mikolajp.creditapp.core.anotation.Regex;
+
+import java.util.ArrayList;
 import java.util.List;
 
+import static pl.mikolajp.creditapp.core.Constants.PESEL_REGEX;
+
 public class NaturalPerson extends Person {
+    @NotNull
+    @Regex(PESEL_REGEX)
     private final String pesel;
     private NaturalPerson(String pesel, PersonalData personalData, ContactData contactData, FinanceData financeData, List<FamilyMember> familyMembers) {
         super(personalData, contactData, financeData, familyMembers);
@@ -14,7 +22,7 @@ public class NaturalPerson extends Person {
         private PersonalData personalData;
         private ContactData contactData;
         private FinanceData financeData;
-        private List<FamilyMember> familyMembers;
+        private List<FamilyMember> familyMembers = new ArrayList<>();
 
         private Builder() {
         }

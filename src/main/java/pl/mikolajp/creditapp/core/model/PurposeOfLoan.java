@@ -1,6 +1,9 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+
 public class PurposeOfLoan {
+    @NotNull
     private final PurposeOfLoanType purposeOfLoanType;
     private final double amount;
     private final int period;

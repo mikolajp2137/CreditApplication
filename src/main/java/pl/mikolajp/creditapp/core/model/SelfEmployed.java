@@ -1,7 +1,11 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.ExactlyOneNotNull;
+
+import java.util.ArrayList;
 import java.util.List;
 
+@ExactlyOneNotNull({"nip", "regon"})
 public class SelfEmployed extends Person {
     private final String nip;
     private final String regon;
@@ -25,7 +29,7 @@ public class SelfEmployed extends Person {
         private PersonalData personalData;
         private ContactData contactData;
         private FinanceData financeData;
-        private List<FamilyMember> familyMembers;
+        private List<FamilyMember> familyMembers = new ArrayList<>();
 
         private Builder() {
         }

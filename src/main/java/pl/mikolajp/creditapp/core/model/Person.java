@@ -1,13 +1,25 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+import pl.mikolajp.creditapp.core.anotation.ValidateCollection;
+import pl.mikolajp.creditapp.core.anotation.ValidateObject;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public abstract class Person {
+    @NotNull
+    @ValidateObject
     private final PersonalData personalData;
+    @NotNull
+    @ValidateObject
     private final ContactData contactData;
+    @NotNull
+    @ValidateObject
     private final FinanceData financeData;
+    @NotNull
+    @ValidateCollection
     private final List<FamilyMember> familyMembers;
 
     protected Person(PersonalData personalData, ContactData contactData, FinanceData financeData, List<FamilyMember> familyMembers) {
@@ -22,6 +34,20 @@ public abstract class Person {
         List<FamilyMember> copy = new ArrayList<>(this.familyMembers);
         Collections.sort(copy, new FamilyMemberNameComparator());
         return copy;
+    }
+
+    public double getBalance(){
+        double totalMonthlyIncome = 0;
+        for (SourceOfIncome sourceOfIncome : financeData.getSourcesOfIncome()){
+            totalMonthlyIncome += sourceOfIncome.getNetMonthlyIncome();
+        }
+
+        double totalExpenses = 0;
+        for (Expense expense : financeData.getExpenses()){
+            totalExpenses += expense.getAmount();
+        }
+
+        return totalMonthlyIncome - totalExpenses;
     }
 
     public int getNumOfDependants(){
@@ -49,6 +75,6 @@ public abstract class Person {
         for (SourceOfIncome sourceOfIncome : financeData.getSourcesOfIncome()){
             totalMonthlyIncome += sourceOfIncome.getNetMonthlyIncome();
         }
-        return totalMonthlyIncome / this.getNumOfDependants();
+        return getBalance() / this.getNumOfDependants();
     }
 }

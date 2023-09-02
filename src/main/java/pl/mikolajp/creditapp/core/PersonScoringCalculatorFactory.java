@@ -10,19 +10,21 @@ public class PersonScoringCalculatorFactory {
     private final EducationCalculator educationCalculator;
     private final IncomeCalculator incomeCalculator;
     private final MaritalStatusCalculator maritalStatusCalculator;
+    private final GuarantorsCalculator guarantorsCalculator;
 
-    public PersonScoringCalculatorFactory(SelfEmployedScoringCalculator selfEmployedScoringCalculator, EducationCalculator educationCalculator, IncomeCalculator incomeCalculator, MaritalStatusCalculator maritalStatusCalculator) {
+    public PersonScoringCalculatorFactory(SelfEmployedScoringCalculator selfEmployedScoringCalculator, EducationCalculator educationCalculator, IncomeCalculator incomeCalculator, MaritalStatusCalculator maritalStatusCalculator, GuarantorsCalculator guarantorsCalculator) {
         this.selfEmployedScoringCalculator = selfEmployedScoringCalculator;
         this.educationCalculator = educationCalculator;
         this.incomeCalculator = incomeCalculator;
         this.maritalStatusCalculator = maritalStatusCalculator;
+        this.guarantorsCalculator = guarantorsCalculator;
     }
 
-    public PersonCalculator getCalculator(Person person) {
+    public ScoringCalculator getCalculator(Person person) {
         if (person instanceof NaturalPerson)
-            return new CompoundScoringCalculator(educationCalculator, maritalStatusCalculator, incomeCalculator);
+            return new CompoundScoringCalculator(guarantorsCalculator, educationCalculator, maritalStatusCalculator, incomeCalculator);
         else if (person instanceof SelfEmployed)
-            return new CompoundScoringCalculator(educationCalculator, maritalStatusCalculator, incomeCalculator, selfEmployedScoringCalculator);
+            return new CompoundScoringCalculator(guarantorsCalculator, educationCalculator, maritalStatusCalculator, incomeCalculator, selfEmployedScoringCalculator);
         return null;
     }
 }

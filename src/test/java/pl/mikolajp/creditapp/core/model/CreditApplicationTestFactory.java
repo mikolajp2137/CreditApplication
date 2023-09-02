@@ -1,7 +1,12 @@
 package pl.mikolajp.creditapp.core.model;
 
+import java.util.Set;
+
 public class CreditApplicationTestFactory {
 
+    public static CreditApplication create(NaturalPerson person, PurposeOfLoan purposeOfLoan, Set<Guarantor> guarantors) {
+        return new CreditApplication(person, purposeOfLoan, guarantors);
+    }
     public static CreditApplication create(NaturalPerson person, PurposeOfLoan purposeOfLoan) {
         return new CreditApplication(person, purposeOfLoan);
     }

@@ -1,11 +1,25 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.core.anotation.NotNull;
+import pl.mikolajp.creditapp.core.anotation.Regex;
+import pl.mikolajp.creditapp.core.anotation.ValidateObject;
+
 import java.util.Optional;
 
+import static pl.mikolajp.creditapp.core.Constants.EMAIL_REGEX;
+import static pl.mikolajp.creditapp.core.Constants.PHONE_REGEX;
+
 public class ContactData {
+    @NotNull
+    @Regex(EMAIL_REGEX)
     private String email;
+    @NotNull
+    @Regex(PHONE_REGEX)
     private String phoneNumber;
+    @NotNull
+    @ValidateObject
     private Address homeAddress;
+    @NotNull
     private Optional<Address> correspondenceAddress;
 
     private ContactData(String email, String phoneNumber, Address homeAddress, Optional<Address> correspondenceAddress) {
