@@ -12,8 +12,8 @@ import java.util.Set;
 
 
 class CreditApplicationValidatorTest {
-    private Set<ClassAnnotationProcessor> classProcessors = Set.of(new ExactlyOneNotNullAnnotationProcessor());
-    private Set<FieldAnnotationProcessor> fieldProcessors = Set.of(new NotNullAnnotationProcessor(), new RegexAnnotationProcessor());
+    private List<ClassAnnotationProcessor> classProcessors = List.of(new ExactlyOneNotNullAnnotationProcessor());
+    private List<FieldAnnotationProcessor> fieldProcessors = List.of(new NotNullAnnotationProcessor(), new RegexAnnotationProcessor());
     private CreditApplicationValidator cut = new CreditApplicationValidator(new ObjectValidator(fieldProcessors, classProcessors));
 
     @Test

@@ -15,7 +15,8 @@ public class DummyCreditApplicationReader implements CreditApplicationReader {
         FamilyMember jack = new FamilyMember("Jack", 5);
         List<FamilyMember> familyMembers = Arrays.asList(john, jane, jack);
 
-        SelfEmployed person = SelfEmployed.Builder.create()
+        NaturalPerson person = NaturalPerson.Builder.create()
+                .withPesel("11122233344")
                 .withPersonalData(PersonalData.Builder.create()
                         .withName("Test").withLastName("Test")
                         .withMothersMaidenName("Test")
@@ -23,8 +24,19 @@ public class DummyCreditApplicationReader implements CreditApplicationReader {
                         .withMaritalStatus(MaritalStatus.MARRIED)
                         .build())
                 .withFinanceData(new FinanceData(new SourceOfIncome(IncomeType.SELF_EMPLOYMENT, 10000.00)))
+                .withContactData(ContactData.Builder.create()
+                        .withHomeAddress(Address.Builder.create()
+                                .withState("test").withZipCode("11-111")
+                                .withCity("test").withStreet("test").withHouseNumber("1")
+                                .build())
+                        .withCorrespondenceAddress(Address.Builder.create()
+                                .withState("test").withZipCode("11-111")
+                                .withCity("test").withStreet("test").withHouseNumber("1")
+                                .build())
+                        .withEmail("email@e.mail")
+                        .withPhoneNumber("123456789")
+                        .build())
                 .withFamilyMembers(familyMembers)
-                .withYearsSinceFounded(3)
                 .build();
         PurposeOfLoan purposeOfLoan = new PurposeOfLoan(PurposeOfLoanType.MORTGAGE, 50000.00, 30);
         Set<Guarantor> guarantors = Set.of(Guarantor.Builder.create().withPesel("12345678901").withAge(18).build(),

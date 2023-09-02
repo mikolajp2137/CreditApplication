@@ -4,13 +4,19 @@ import pl.mikolajp.creditapp.core.model.NaturalPerson;
 import pl.mikolajp.creditapp.core.model.Person;
 import pl.mikolajp.creditapp.core.model.SelfEmployed;
 import pl.mikolajp.creditapp.core.scoring.*;
+import pl.mikolajp.creditapp.di.Inject;
 
 public class PersonScoringCalculatorFactory {
-    private final SelfEmployedScoringCalculator selfEmployedScoringCalculator;
-    private final EducationCalculator educationCalculator;
-    private final IncomeCalculator incomeCalculator;
-    private final MaritalStatusCalculator maritalStatusCalculator;
-    private final GuarantorsCalculator guarantorsCalculator;
+    @Inject
+    private SelfEmployedScoringCalculator selfEmployedScoringCalculator;
+    @Inject
+    private EducationCalculator educationCalculator;
+    @Inject
+    private IncomeCalculator incomeCalculator;
+    @Inject
+    private MaritalStatusCalculator maritalStatusCalculator;
+    @Inject
+    private GuarantorsCalculator guarantorsCalculator;
 
     public PersonScoringCalculatorFactory(SelfEmployedScoringCalculator selfEmployedScoringCalculator, EducationCalculator educationCalculator, IncomeCalculator incomeCalculator, MaritalStatusCalculator maritalStatusCalculator, GuarantorsCalculator guarantorsCalculator) {
         this.selfEmployedScoringCalculator = selfEmployedScoringCalculator;
@@ -19,6 +25,7 @@ public class PersonScoringCalculatorFactory {
         this.maritalStatusCalculator = maritalStatusCalculator;
         this.guarantorsCalculator = guarantorsCalculator;
     }
+    public PersonScoringCalculatorFactory(){}
 
     public ScoringCalculator getCalculator(Person person) {
         if (person instanceof NaturalPerson)

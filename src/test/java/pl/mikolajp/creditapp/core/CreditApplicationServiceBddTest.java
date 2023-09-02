@@ -25,8 +25,8 @@ class CreditApplicationServiceBddTest {
     private IncomeCalculator incomeCalculator = new IncomeCalculator();
     private SelfEmployedScoringCalculator selfEmployedScoringCalculator = new SelfEmployedScoringCalculator();
     private PersonScoringCalculatorFactory personScoringCalculatorFactory = new PersonScoringCalculatorFactory(selfEmployedScoringCalculator, educationCalculator, incomeCalculator, maritalStatusCalculator, guarantorsCalculator);
-    private Set<ClassAnnotationProcessor> classProcessors = Set.of(new ExactlyOneNotNullAnnotationProcessor());
-    private Set<FieldAnnotationProcessor> fieldProcessors = Set.of(new NotNullAnnotationProcessor(), new RegexAnnotationProcessor());
+    private List<ClassAnnotationProcessor> classProcessors = List.of(new ExactlyOneNotNullAnnotationProcessor());
+    private List<FieldAnnotationProcessor> fieldProcessors = List.of(new NotNullAnnotationProcessor(), new RegexAnnotationProcessor());
     private CompoundPostValidator compoundPostValidator= new CompoundPostValidator(new PurposeOfLoanPostValidator(), new ExpensesPostValidator());
 
     private CreditApplicationValidator creditApplicationValidator = new CreditApplicationValidator(new ObjectValidator(fieldProcessors, classProcessors));
