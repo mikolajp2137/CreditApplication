@@ -5,9 +5,12 @@ import org.junit.jupiter.api.Test;
 import pl.mikolajp.creditapp.core.exception.ValidationException;
 import pl.mikolajp.creditapp.core.model.*;
 import pl.mikolajp.creditapp.core.validation.reflection.*;
+import pl.mikolajp.creditapp.util.AgeUtils;
 
+import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 
@@ -20,9 +23,9 @@ class CreditApplicationValidatorTest {
     @DisplayName("")
     public void test() throws ValidationException {
         //given
-        FamilyMember john = new FamilyMember("Ann", 18);
-        FamilyMember jane = new FamilyMember("Beatrice", 40);
-        FamilyMember jack = new FamilyMember("Jack", 5);
+        FamilyMember john = new FamilyMember("Ann", AgeUtils.generateBirthDate(18));
+        FamilyMember jane = new FamilyMember("Beatrice", AgeUtils.generateBirthDate(40));
+        FamilyMember jack = new FamilyMember("Jack", AgeUtils.generateBirthDate(5));
         List<FamilyMember> familyMembers = Arrays.asList(john, jane, jack);
 
         NaturalPerson person = NaturalPerson.Builder.create()
@@ -49,10 +52,10 @@ class CreditApplicationValidatorTest {
                 .withFamilyMembers(familyMembers)
                 .build();
         PurposeOfLoan purposeOfLoan = new PurposeOfLoan(PurposeOfLoanType.MORTGAGE, 50000.00, 30);
-        Set<Guarantor> guarantors = Set.of(Guarantor.Builder.create().withPesel("12345678901").withAge(18).build(),
-                Guarantor.Builder.create().withPesel("12345678902").withAge(41).build());
+        Set<Guarantor> guarantors = Set.of(Guarantor.Builder.create().withPesel("12345678901").withAge(AgeUtils.generateBirthDate(18)).build(),
+                Guarantor.Builder.create().withPesel("12345678902").withAge(AgeUtils.generateBirthDate(41)).build());
 
-        CreditApplication creditApplication = new CreditApplication(person, purposeOfLoan, guarantors);
+        CreditApplication creditApplication = new CreditApplication(Locale.US, ZoneId.of("Europe/Warsaw"),person, purposeOfLoan, guarantors);
         //when
         cut.validate(creditApplication);
     }

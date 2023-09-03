@@ -10,6 +10,7 @@ import pl.mikolajp.creditapp.core.scoring.IncomeCalculator;
 import pl.mikolajp.creditapp.core.scoring.MaritalStatusCalculator;
 import pl.mikolajp.creditapp.core.validation.*;
 import pl.mikolajp.creditapp.core.validation.reflection.*;
+import pl.mikolajp.creditapp.util.AgeUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,7 +38,7 @@ class CreditApplicationServiceBddTest {
     @DisplayName("Should return NEGATIVE_REQUIREMENTS_NOT_MET, when loan amount is below 100000 for mortgage")
     public void test1() {
         //given
-        List<FamilyMember> familyMembers = Arrays.asList(new FamilyMember("Ann", 18));
+        List<FamilyMember> familyMembers = Arrays.asList(new FamilyMember("Ann", AgeUtils.generateBirthDate(18)));
         NaturalPerson person = NaturalPerson.Builder.create()
                 .withFamilyMembers(familyMembers)
                 .withPesel("12312312312")
@@ -77,7 +78,7 @@ class CreditApplicationServiceBddTest {
     @DisplayName("Should return Decision is negative, when years since founded <2")
     public void test2() {
         //given
-        List<FamilyMember> familyMembers = Arrays.asList(new FamilyMember("Ann", 18));
+        List<FamilyMember> familyMembers = Arrays.asList(new FamilyMember("Ann", AgeUtils.generateBirthDate(18)));
         SelfEmployed person = SelfEmployed.Builder.create()
                 .withFamilyMembers(familyMembers)
                 .withNip("111111")
@@ -117,7 +118,7 @@ class CreditApplicationServiceBddTest {
     @DisplayName("Should return Decision is contact required, when years since founded >=2")
     public void test3() {
         //given
-        List<FamilyMember> familyMembers = Arrays.asList(new FamilyMember("Ann", 18));
+        List<FamilyMember> familyMembers = Arrays.asList(new FamilyMember("Ann", AgeUtils.generateBirthDate(18)));
         SelfEmployed person = SelfEmployed.Builder.create()
                 .withFamilyMembers(familyMembers)
                 .withNip("111111")

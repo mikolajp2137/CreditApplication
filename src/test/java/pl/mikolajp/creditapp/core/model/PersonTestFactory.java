@@ -1,5 +1,7 @@
 package pl.mikolajp.creditapp.core.model;
 
+import pl.mikolajp.creditapp.util.AgeUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +65,7 @@ public class PersonTestFactory {
 
     private static List<FamilyMember> getFamilyMembers(int numOfDependants) {
         List<FamilyMember> familyMembers = new ArrayList<>();
-        for (int i = 0; i < numOfDependants-1; i++) familyMembers.add(new FamilyMember("Ann", 18));
+        for (int i = 0; i < numOfDependants-1; i++) familyMembers.add(new FamilyMember("Ann", AgeUtils.generateBirthDate(18)));
         return familyMembers;
     }
 

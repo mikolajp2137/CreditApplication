@@ -13,11 +13,10 @@ public class CreditApplicationManager {
     private static final Logger log = LoggerFactory.getLogger(CreditApplicationService.class);
     @Inject
     private CreditApplicationService creditApplicationService;
+    @Inject
+    private CreditApplicationDecisionFactory creditApplicationDecisionFactory;
     private Deque<CreditApplication> queue = new ArrayDeque<>();
 
-    public CreditApplicationManager(CreditApplicationService creditApplicationService) {
-        this.creditApplicationService = creditApplicationService;
-    }
     public CreditApplicationManager(){}
 
     public void add(CreditApplication creditApplication) {
@@ -30,7 +29,7 @@ public class CreditApplicationManager {
             CreditApplication creditApplication = queue.pollLast();
             log.info(String.format("Starting processing application with id=%s", creditApplication.getId()));
             CreditApplicationDecision decision = creditApplicationService.getDecision(creditApplication);
-            log.info(decision.getDecisionString());
+            log.info(creditApplicationDecisionFactory.getDecisionString(creditApplication, decision));
             MDC.remove("id");
         }
 

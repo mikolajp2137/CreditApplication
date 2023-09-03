@@ -2,6 +2,8 @@ package pl.mikolajp.creditapp.core.model;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pl.mikolajp.creditapp.util.AgeUtils;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,22 +13,20 @@ class PersonTest {
 
     @Test
     @DisplayName("familyMembers list should be sorted")
-    public void test1(){
+    public void test1() {
         //given
-        FamilyMember john = new FamilyMember("John", 18);
-        FamilyMember jane = new FamilyMember("Jane", 40);
-        FamilyMember jack = new FamilyMember("Jack", 5);
-        List<FamilyMember> familyMembers = Arrays.asList(john, jane, jack);
+        FamilyMember john = new FamilyMember("John", AgeUtils.generateBirthDate(18));
+        FamilyMember jane = new FamilyMember("Jane", AgeUtils.generateBirthDate(40));
+        FamilyMember susie = new FamilyMember("Susie", AgeUtils.generateBirthDate(5));
+        List<FamilyMember> familyMembers = Arrays.asList(john, jane, susie);
         //when
-        Person person = NaturalPerson.Builder.create()
-                .withFamilyMembers(familyMembers)
-                .build();
+        Person person = NaturalPerson.Builder.create().withFamilyMembers(familyMembers).build();
         //then
         assertNotNull(person.getFamilyMembers());
         assertEquals(3, person.getFamilyMembers().size());
-        assertEquals(jane, person.getFamilyMembers().get(0));
+        assertEquals(susie, person.getFamilyMembers().get(0));
         assertEquals(john, person.getFamilyMembers().get(1));
-        assertEquals(jack, person.getFamilyMembers().get(2));
+        assertEquals(jane, person.getFamilyMembers().get(2));
     }
 
 }

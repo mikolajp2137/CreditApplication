@@ -3,6 +3,8 @@ package pl.mikolajp.creditapp.client;
 import pl.mikolajp.creditapp.core.Constants;
 import pl.mikolajp.creditapp.core.model.*;
 
+import java.time.ZoneId;
+import java.util.Locale;
 import java.util.Scanner;
 
 // THIS CLASS IS NO LONGER USED
@@ -33,16 +35,17 @@ public class ConsoleReader implements CreditApplicationReader {
         PurposeOfLoan purposeOfLoan = new PurposeOfLoan(purposeOfLoanType, purposeOfLoanAmount, period);
         FinanceData financeData = new FinanceData(sourcesOfIncome);
 
-        return new CreditApplication(NaturalPerson.Builder.create()
-                .withPersonalData(PersonalData
-                        .Builder
-                        .create()
-                        .withName(name).withLastName(lastName).withMothersMaidenName(mothersMaidenName)
-                        .withMaritalStatus(maritalStatus).withEducation(education)
-                        .build())
-                .withContactData(contactData)
-                .withFinanceData(financeData)
-                .build(), purposeOfLoan);
+        return new CreditApplication(Locale.US, ZoneId.of("Europe/Warsaw"),
+                NaturalPerson.Builder.create()
+                        .withPersonalData(PersonalData
+                                .Builder
+                                .create()
+                                .withName(name).withLastName(lastName).withMothersMaidenName(mothersMaidenName)
+                                .withMaritalStatus(maritalStatus).withEducation(education)
+                                .build())
+                        .withContactData(contactData)
+                        .withFinanceData(financeData)
+                        .build(), purposeOfLoan);
     }
 
     private int getPeriod(Scanner in) {
