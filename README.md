@@ -25,7 +25,7 @@ This application is intended for processing credit applications in JSON format. 
 
 To run this project, you need the following:
 
-    Java Development Kit (JDK) 8 or higher
+    Java Development Kit (JDK) 11 or higher
     Maven (for building and managing dependencies)
 
 ## Installation
