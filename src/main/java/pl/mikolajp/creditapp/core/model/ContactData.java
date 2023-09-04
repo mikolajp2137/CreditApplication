@@ -1,27 +1,34 @@
 package pl.mikolajp.creditapp.core.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.mikolajp.creditapp.core.anotation.NotNull;
 import pl.mikolajp.creditapp.core.anotation.Regex;
 import pl.mikolajp.creditapp.core.anotation.ValidateObject;
 
+import java.io.Serializable;
 import java.util.Optional;
 
 import static pl.mikolajp.creditapp.core.Constants.EMAIL_REGEX;
 import static pl.mikolajp.creditapp.core.Constants.PHONE_REGEX;
 
-public class ContactData {
+public class ContactData implements Serializable {
+    public static final long serialVersionUID = 1l;
     @NotNull
     @Regex(EMAIL_REGEX)
+    @JsonProperty
     private String email;
     @NotNull
     @Regex(PHONE_REGEX)
+    @JsonProperty
     private String phoneNumber;
     @NotNull
     @ValidateObject
+    @JsonProperty
     private Address homeAddress;
-    @NotNull
-    private Optional<Address> correspondenceAddress;
+    @JsonProperty
+    private transient Optional<Address> correspondenceAddress = Optional.empty();
 
+    public ContactData(){}
     private ContactData(String email, String phoneNumber, Address homeAddress, Optional<Address> correspondenceAddress) {
         this.email = email;
         this.phoneNumber = phoneNumber;

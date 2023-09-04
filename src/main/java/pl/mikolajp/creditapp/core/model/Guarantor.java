@@ -1,21 +1,27 @@
 package pl.mikolajp.creditapp.core.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.mikolajp.creditapp.core.anotation.NotNull;
 import pl.mikolajp.creditapp.core.anotation.Regex;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
 
 import static pl.mikolajp.creditapp.core.Constants.PESEL_REGEX;
 
-public class Guarantor implements Comparable<Guarantor> {
+public class Guarantor implements Comparable<Guarantor>, Serializable {
+    public static final long serialVersionUID = 1l;
     @NotNull
     @Regex(PESEL_REGEX)
-    private final String pesel;
+    @JsonProperty
+    private String pesel;
     @NotNull
-    private final LocalDate birthDate;
+    @JsonProperty
+    private LocalDate birthDate;
 
+    public Guarantor(){}
     protected Guarantor(String pesel, LocalDate birthDate) {
         this.pesel = pesel;
         this.birthDate = birthDate;

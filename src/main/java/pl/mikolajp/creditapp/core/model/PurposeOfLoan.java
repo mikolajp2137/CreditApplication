@@ -1,13 +1,21 @@
 package pl.mikolajp.creditapp.core.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.mikolajp.creditapp.core.anotation.NotNull;
 
-public class PurposeOfLoan {
-    @NotNull
-    private final PurposeOfLoanType purposeOfLoanType;
-    private final double amount;
-    private final int period;
+import java.io.Serializable;
 
+public class PurposeOfLoan implements Serializable {
+    public static final long serialVersionUID = 1l;
+    @NotNull
+    @JsonProperty
+    private PurposeOfLoanType purposeOfLoanType;
+    @JsonProperty
+    private double amount;
+    @JsonProperty
+    private int period;
+
+    public PurposeOfLoan(){}
     public PurposeOfLoan(PurposeOfLoanType purposeOfLoanType, double amount, int period) {
         this.purposeOfLoanType = purposeOfLoanType;
         this.amount = amount;

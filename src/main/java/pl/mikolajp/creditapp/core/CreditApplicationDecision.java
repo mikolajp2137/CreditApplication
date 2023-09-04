@@ -3,11 +3,13 @@ package pl.mikolajp.creditapp.core;
 import pl.mikolajp.creditapp.core.exception.RequirementsNotMetCause;
 import pl.mikolajp.creditapp.core.model.PersonalData;
 
+import java.io.Serializable;
 import java.util.Optional;
 
 
-public class CreditApplicationDecision {
-    private final Optional<RequirementsNotMetCause> requirementsNotMetCause;
+public class CreditApplicationDecision implements Serializable {
+    public static final long serialVersionUID = 1l;
+    private final transient Optional<RequirementsNotMetCause> requirementsNotMetCause;
     private final DecisionType decisionType;
     private final PersonalData personalData;
     private final Double creditRate;

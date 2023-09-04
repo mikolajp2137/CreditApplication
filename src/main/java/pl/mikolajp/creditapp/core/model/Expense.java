@@ -1,16 +1,23 @@
 package pl.mikolajp.creditapp.core.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.mikolajp.creditapp.core.anotation.NotNull;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Expense {
+public class Expense implements Serializable {
+    public static final long serialVersionUID = 1l;
     @NotNull
-    private final String name;
+    @JsonProperty
+    private String name;
     @NotNull
-    private final ExpenseType expenseType;
-    private final double amount;
+    @JsonProperty
+    private ExpenseType expenseType;
+    @JsonProperty
+    private double amount;
 
+    public Expense(){}
     public Expense(String name, ExpenseType expenseType, double amount) {
         this.name = name;
         this.expenseType = expenseType;

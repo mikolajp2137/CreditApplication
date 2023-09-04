@@ -1,5 +1,6 @@
 package pl.mikolajp.creditapp.core.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.mikolajp.creditapp.core.anotation.ExactlyOneNotNull;
 
 import java.util.ArrayList;
@@ -7,10 +8,15 @@ import java.util.List;
 
 @ExactlyOneNotNull({"nip", "regon"})
 public class SelfEmployed extends Person {
-    private final String nip;
-    private final String regon;
-    private final int yearsSinceFounded;
+    public static final long serialVersionUID = 1l;
+    @JsonProperty
+    private String nip;
+    @JsonProperty
+    private String regon;
+    @JsonProperty
+    private int yearsSinceFounded;
 
+    public SelfEmployed(){}
     private SelfEmployed(int yearsSinceFounded, String nip, String regon, PersonalData personalData, ContactData contactData, FinanceData financeData, List<FamilyMember> familyMembers) {
         super(personalData, contactData, financeData, familyMembers);
         this.nip = nip;
@@ -20,6 +26,14 @@ public class SelfEmployed extends Person {
 
     public int getYearsSinceFounded() {
         return yearsSinceFounded;
+    }
+
+    public String getNip() {
+        return nip;
+    }
+
+    public String getRegon() {
+        return regon;
     }
 
     public static class Builder {

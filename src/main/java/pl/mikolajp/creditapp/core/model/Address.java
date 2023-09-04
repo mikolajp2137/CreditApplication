@@ -1,21 +1,30 @@
 package pl.mikolajp.creditapp.core.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.mikolajp.creditapp.core.anotation.NotNull;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Address {
+public class Address implements Serializable {
+    public static final long serialVersionUID = 1l;
     @NotNull
-    private final String street;
+    @JsonProperty
+    private String street;
     @NotNull
-    private final String houseNumber;
+    @JsonProperty
+    private String houseNumber;
     @NotNull
-    private final String zipCode;
+    @JsonProperty
+    private String zipCode;
     @NotNull
-    private final String city;
+    @JsonProperty
+    private String city;
     @NotNull
-    private final String state;
+    @JsonProperty
+    private String state;
 
+    public Address(){}
     private Address(String street, String houseNumber, String zipCode, String city, String state) {
         this.street = street;
         this.houseNumber = houseNumber;

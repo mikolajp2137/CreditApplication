@@ -1,12 +1,19 @@
 package pl.mikolajp.creditapp.core.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import pl.mikolajp.creditapp.core.anotation.NotNull;
 
-public class SourceOfIncome {
-    @NotNull
-    private final IncomeType incomeType;
-    private final double netMonthlyIncome;
+import java.io.Serializable;
 
+public class SourceOfIncome implements Serializable {
+    public static final long serialVersionUID = 1l;
+    @NotNull
+    @JsonProperty
+    private IncomeType incomeType;
+    @JsonProperty
+    private double netMonthlyIncome;
+
+    public SourceOfIncome(){}
     public SourceOfIncome(IncomeType incomeType, double netMonthlyIncome) {
         this.incomeType = incomeType;
         this.netMonthlyIncome = netMonthlyIncome;

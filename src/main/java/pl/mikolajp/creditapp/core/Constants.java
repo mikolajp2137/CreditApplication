@@ -16,4 +16,5 @@ public interface Constants {
     double MINIMAL_LOAN_AMOUNT_MORTGAGE = 100000.00;
     ZoneId DEFAULT_SYSTEM_ZONE_ID = ZoneId.of("America/El_Salvador");
     Locale DEFAULT_LOCALE = Locale.US;
+    String OUTPUT_PATH = "C:\\CreditAppOutput\\";
 }
